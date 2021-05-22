@@ -1,0 +1,90 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  padding: 20px;
+}
+
+.profile-item {
+  position: relative;
+  backdrop-filter: blur(4px);
+  color: "white";
+  border: 1px solid rgb(230, 217, 217);
+  box-shadow: 3px 3px 5px 6px rgb(80, 80, 80);
+  height: 60vh;
+  border-radius: 10px;
+  width: 40vh;
+  margin: 60px;
+}
+
+.image-item {
+  position: relative;
+  width: 40vh;
+  border-radius: 10px 10px 0 0;
+  height: 20rem;
+}
+
+.del {
+  position: absolute;
+  top: -50px;
+}
+
+.item-description {
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 10px;
+  padding-right: 10px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  line-height: 16px; /* fallback */
+  max-height: 32px;
+}
+
+.button-icon {
+  align-items: center;
+  justify-content: center;
+  margin-left: 6rem;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.icons {
+  margin-right: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.onTop {
+  top: 0;
+  position: absolute;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.alluring {
+  position: absolute;
+
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 39%;
+  width: 400px;
+  justify-content: center;
+}
+
+.center-2 {
+  min-height: 300vh;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-image: url("./alright.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}

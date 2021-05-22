@@ -1,0 +1,61 @@
+.father {
+  position: relative;
+  backdrop-filter: blur(4px);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 190vh;
+  width: 100%;
+  background-image: url("./ramsis.jpg");
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+.kalb {
+  position: absolute;
+
+  backdrop-filter: blur(4px);
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.title {
+  top: 1px;
+  position: absolute;
+  color: white;
+}
+
+.comment-section {
+  position: relative;
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  top: 100vh;
+  height: 40vh;
+  width: 100%;
+  /* overflow: scroll;
+  overflow: hidden; */
+  color: white;
+}
+
+.ul {
+  height: 50vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.dng {
+  position: absolute;
+  top: 10px;
+  left: -120px;
+}
+
+.horse {
+  position: absolute;
+
+  left: -400px;
+  top: -100px;
+}

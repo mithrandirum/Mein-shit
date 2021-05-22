@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  color: #926239;
+  line-height: 1.6;
+  position: relative;
+}
+
+#showcase {
+  background-image: url("./history.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+#showcase h1 {
+  font-size: 50px;
+  line-height: 1.2;
+  color: white;
+}
+
+#showcase p {
+  font-size: 20px;
+  color: white;
+}
+
+#showcase .button {
+  font-size: 18px;
+  text-decoration: none;
+  color: #926239;
+  border: #926239 1px solid;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: blanchedalmond;
+}
+
+#showcase .button:hover {
+  background: #926239;
+  color: #fff;
+}
+
+#section-a {
+  padding: 20px;
+  background: #926239;
+  color: #fff;
+  text-align: center;
+}
+
+#section-b {
+  padding: 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+#section-c {
+  display: flex;
+}
+
+#section-c div {
+  padding: 20px;
+}
+
+#section-c .box-1,
+#section-c .box-3 {
+  background: #926239;
+  color: #fff;
+}
+
+#section-c .box-2 {
+  background: #f9f9f9;
+}
+
+.center {
+  /* width: 100px;
+  height: 100px; */
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+}
+
+.card {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  /* width: 350px;                               
+  /* height: 450px; */
+  width: 100vh;
+  height: 75vh;
+  position: relative;
+  word-break: break-word;
+  box-shadow: 3px 3px 5px 6px rgb(0, 0, 0);
+  text-align: center;
+  /* margin: 10%; */
+  border-radius: 15px;
+  position: absolute;
+  top: 250px;
+  border: none;
+}
+
+.card-2 {
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  /* width: 350px;                               
+  /* height: 450px; */
+  width: 100vh;
+  height: 75vh;
+  position: relative;
+  word-break: break-word;
+  box-shadow: 3px 3px 5px 6px rgb(0, 0, 0);
+  text-align: center;
+  /* margin: 10%; */
+  border-radius: 15px;
+  position: absolute;
+  top: 150px;
+  left: 23%;
+  border: none;
+}
+
+.card-background {
+  background: linear-gradient(to right, #009688, #4caf50);
+  position: absolute;
+
+  height: 350px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: 6px solid #f4f3f3;
+  /* height: 350px;
+  width: 100%; */
+  /* border-top-left-radius: 8px;
+  border-top-right-radius: 8px; */
+  border: none;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 150px;
+}
+
+.card-social-icons-2 {
+  position: absolute;
+  bottom: 10px;
+}
+
+.card-info-2 {
+  position: absolute;
+  bottom: 0;
+  left: 43%;
+  color: white;
+}
+
+.card-info-3 {
+  position: absolute;
+  top: 50%;
+  left: 47%;
+}
+
+.card-info-4 {
+  position: absolute;
+  top: 52%;
+}
+
+.fab {
+  color: grey;
+  font-size: 24px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.fab:hover {
+  color: #524b4b;
+}
+
+h1 {
+  color: #009688;
+}
+
+p {
+  color: grey;
+}
+
+/* 
+ptofle container  */
+
+.profile-container {
+  height: 100vh;
+}
+
+.welcome {
+  margin-left: 30px;
+  /* margin-top: 90px; */
+  color: white;
+}
+
+.form-width {
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  position: absolute;
+  top: 200px;
+  width: 60vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  left: 35%;
+}
+
+.form-width-2 {
+  backdrop-filter: blur(4px);
+  padding: 20px;
+
+  position: absolute;
+  top: 200px;
+  width: 60vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  left: 35%;
+}
+
+.update-container {
+  min-height: 150vh;
+  position: relative;
+  background-image: url("./adrien-delforge-0LUqdizULdY-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.register-alright {
+  position: relative;
+}
+
+/* .west { */
+/* position: absolute; */
+/* top: 10rem;
+} 
+.align {
+  text-align: center;
+}
+
+.profiles {
+  display: block;
+}
+
+.a {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+}
+
+/* .alright {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+} */
+
+.cadre {
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  left: 10px;
+  bottom: 10px;
+  position: absolute;
+}
