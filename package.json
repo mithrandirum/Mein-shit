@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "this is it ",
   "main": "index.js",
+  "engines": {
+    "node": "14.16.0"
+  },
   "scripts": {
     "server": "nodemon server.js --ignore './client/'",
     "client": "yarn start --prefix client",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "NPM_CONGIF_PRODUTCTION=FALSE npm install --prefix && npm run build --prefix client"
+    "dev": "concurrently \"yarn run server\" \"yarn run client\""
   },
   "repository": {
     "type": "git",
