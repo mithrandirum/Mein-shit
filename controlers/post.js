@@ -26,7 +26,7 @@ exports.createPost = async (req, res) => {
     }`;
 
     file.mv(
-      `${__dirname}/../client/public/postImage/${file.name}`,
+      `${process.env.FILE_UPLOAD_PATH_POST}/${file.name}`,
       async (err) => {
         if (err) {
           console.error(err);

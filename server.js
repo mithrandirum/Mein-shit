@@ -33,6 +33,9 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+// Set static folder
+app.use(express.static(path.join(__dirname, "./client/public/image")));
+app.use(express.static(path.join(__dirname, "./client/public/postImage")));
 
 app.listen(process.env.PORT || 5000, () => {
   console.log(`server listenning on port ${process.env.PORT}`.bold.yellow);

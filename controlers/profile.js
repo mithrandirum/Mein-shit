@@ -1,6 +1,7 @@
 const path = require("path");
 const Profile = require("../models/Profile");
 const normalize = require("normalize-url");
+var fs = require("fs");
 
 exports.uploadImage = async (req, res) => {
   try {
@@ -19,28 +20,33 @@ exports.uploadImage = async (req, res) => {
     // Create custom filename
     file.name = `photo_${req.user._id}${path.parse(file.name).ext}`;
 
-    file.mv(`${__dirname}/../client/public/image/${file.name}`, async (err) => {
-      if (err) {
-        console.error(err);
-        return res.status(400).json({ errors: ["failed to add image"] });
+    file.mv(
+      `${process.env.FILE_UPLOAD_PATH_PROFILE}/${file.name}`,
+      async (err) => {
+        if (err) {
+          console.error(err);
+          return res.status(400).json({ errors: ["failed to add image"] });
+        }
+
+        const fprofile = await Profile.findOne({ user: req.user.id });
+
+        if (!fprofile)
+          res
+            .status(404)
+            .json({ errors: ["user does not have a profile yet"] });
+
+        const profile = await Profile.findOneAndUpdate(
+          { user: fprofile.user },
+          { image: file.name }
+        );
+
+        await profile.save();
+
+        res.status(200).json({
+          profile,
+        });
       }
-
-      const fprofile = await Profile.findOne({ user: req.user.id });
-
-      if (!fprofile)
-        res.status(404).json({ errors: ["user does not have a profile yet"] });
-
-      const profile = await Profile.findOneAndUpdate(
-        { user: fprofile.user },
-        { image: file.name }
-      );
-
-      await profile.save();
-
-      res.status(200).json({
-        profile,
-      });
-    });
+    );
   } catch (error) {
     console.error(error);
   }
@@ -86,6 +92,14 @@ exports.deleteProfile = async (req, res) => {
   const profileId = req.params.profileId;
 
   try {
+    const name = `${process.env.FILE_UPLOAD_PATH_PROFILE}/photo_${
+      req.user._id
+    }.${"jpg" || "png"}`;
+    fs.unlink(name, function (err) {
+      if (err) throw err;
+      console.log("File deleted!");
+    });
+
     console.log(req.params.profileId);
     const profile = await Profile.findById({ _id: profileId });
     //console.log(profile);

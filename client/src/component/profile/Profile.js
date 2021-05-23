@@ -96,12 +96,12 @@ const Profile = ({ history }) => {
                   : profileState.profile && profileState.profile.image
                   ? process.env.PUBLIC_URL +
                     `/image/photo_${
-                      profileState.loading && authState.user === null
-                        ? ""
-                        : !profileState.loading &&
-                          !authState.loading &&
-                          authState.user &&
-                          authState.user._id
+                      // profileState.loading && authState.user === null
+                      //   ? ""
+                      //   : !profileState.loading &&
+                      //     !authState.loading &&
+                      //     authState.user &&
+                      authState.user._id
                     }.jpg`
                   : ""
               }
