@@ -94,15 +94,14 @@ const Profile = ({ history }) => {
                 authState.loading || profileState.loading
                   ? null
                   : profileState.profile && profileState.profile.image
-                  ? process.env.PUBLIC_URL +
-                    `/image/photo_${
+                  ? `${process.env.FILE_UPLOAD_PATH_PROFILE}/photo_${
                       // profileState.loading && authState.user === null
                       //   ? ""
                       //   : !profileState.loading &&
                       //     !authState.loading &&
                       //     authState.user &&
                       authState.user._id
-                    }.jpg`
+                    }.${"jpg" || "png"}`
                   : ""
               }
             />
