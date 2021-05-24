@@ -2,6 +2,7 @@ const path = require("path");
 const Profile = require("../models/Profile");
 const normalize = require("normalize-url");
 var fs = require("fs");
+const { find } = require("../models/Profile");
 
 exports.uploadImage = async (req, res) => {
   try {
@@ -95,10 +96,12 @@ exports.deleteProfile = async (req, res) => {
     const name = `${process.env.FILE_UPLOAD_PATH_PROFILE}/photo_${
       req.user._id
     }.${"jpg" || "png"}`;
-    fs.unlink(name, function (err) {
-      if (err) throw err;
-      console.log("File deleted!");
-    });
+    name !== null || name.length < 0
+      ? null
+      : fs.unlink(name, function (err) {
+          if (err) throw err;
+          console.log("File deleted!");
+        });
 
     console.log(req.params.profileId);
     const profile = await Profile.findById({ _id: profileId });
@@ -112,10 +115,12 @@ exports.deleteProfile = async (req, res) => {
       return res.status(401).json({ errors: ["unaithorized"] });
     }
 
-    await Profile.findByIdAndDelete({ _id: profileId });
+    const po = await Profile.findByIdAndRemove({ _id: profileId });
 
+    //await po.save();
     res.status(200).json({ data: {}, success: true });
   } catch (error) {
+    console.log(error);
     res.status(500).json();
   }
 };

@@ -41,10 +41,15 @@
   color: white;
 }
 
-.ul {
-  height: 50vh;
-  overflow: scroll;
-  overflow-x: hidden;
+.uri {
+  /* height: 50vh; */
+  /* overflow: scroll;
+  overflow-x: hidden; */
+  position: absolute;
+  right: 38%;
+  width: 40%;
+  text-decoration: none;
+  list-style: none;
 }
 
 .dng {

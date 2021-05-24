@@ -397,9 +397,9 @@
 
 .alright-2 {
   max-height: fit-content;
-  background-image: url("./pexels-maria-orlova-4946674.jpg");
+  background-image: url("./true_position.jpg");
   background-size: cover;
-  background-position: "center";
+  background-position: center;
   background-repeat: no-repeat;
   min-height: 300vh;
   position: relative;
@@ -455,4 +455,15 @@
   text-align: center;
   margin: 2%;
   left: 25%;
+}
+
+.nothing-2 {
+  position: absolute;
+
+  top: 33%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2%;
+  right: 0%;
 }

@@ -193,17 +193,17 @@ export const BrowsePost = ({ history }) => {
           </labal>
         </Button>
         <ul
-          className='ul'
-          style={{ alignItems: "center", justifyContent: "center" }}
+          className='uri'
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
           {authState.loading || postState.loading
             ? null
             : openComment && postState.post[0].comments.length > 0
             ? postState.post[0].comments.map((comment) => (
-                <li
-                  style={{ width: "50%", marginLeft: "18%" }}
-                  key={comment._id}
-                >
+                <li key={comment._id}>
                   <ComentItem
                     comment={comment}
                     key={comment._id}

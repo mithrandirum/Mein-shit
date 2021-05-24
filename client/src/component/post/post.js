@@ -17,7 +17,7 @@ import Moment from "react-moment";
 
 export const Post = ({
   history,
-  post: { text, image, likes, comments, _id, createdAt },
+  post: { text, image, likes, comments, _id, createdAt, user },
 }) => {
   const [comment, setComment] = useState("");
   const dispatch = useDispatch();
@@ -59,14 +59,18 @@ export const Post = ({
           </p>
 
           <div className='comment-2'>
-            <Button
-              className='mr-4'
-              onClick={() => dispatch(removePost(_id))}
-              className='btn-danger dng'
-            >
-              {" "}
-              delete post{" "}
-            </Button>
+            {authState.user._id === user ? (
+              <Button
+                className='mr-4'
+                onClick={() => dispatch(removePost(_id))}
+                className='btn-danger dng'
+              >
+                {" "}
+                delete post{" "}
+              </Button>
+            ) : (
+              ""
+            )}
 
             <form>
               <textarea

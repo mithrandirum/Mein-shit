@@ -82,7 +82,7 @@ const postReducer = (state = intial, action) => {
     case GET_POST_SUCCESS:
       return {
         ...state,
-        userPosts: [...state.userPosts, ...payload],
+
         post: payload,
         loading: false,
       };
@@ -201,14 +201,19 @@ const postReducer = (state = intial, action) => {
     case REMOVE_LIKE_SUCCESS_USER_POSTS:
       return {
         ...state,
-        userPosts: state.userPosts.map((po) =>
-          po._id === payload.postId
-            ? (po = {
-                ...po,
-                likes: po.likes.filter((like) => like.user !== payload.userId),
-              })
-            : po
-        ),
+        userPosts:
+          state.userPosts === null
+            ? null
+            : state.userPosts.map((po) =>
+                po._id === payload.postId
+                  ? (po = {
+                      ...po,
+                      likes: po.likes.filter(
+                        (like) => like.user !== payload.userId
+                      ),
+                    })
+                  : po
+              ),
       };
 
     case REMOVE_COMMENT_SUCCESS:

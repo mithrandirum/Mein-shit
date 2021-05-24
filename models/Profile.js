@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Post = require("../models/Post");
 
 const ProfileSchema = new Schema({
   description: String,
@@ -28,6 +29,10 @@ const ProfileSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+});
+
+ProfileSchema.post("findOneAndRemove", async function () {
+  await Post.deleteMany({ user: this.user });
 });
 
 module.exports = mongoose.model("profile", ProfileSchema);
